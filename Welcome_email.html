@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #0f0f0f;
+            color: #1a1a1a;
+            padding: 20px;
+        }
+        
+        .email-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255, 193, 7, 0.15);
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-wrapper img {
+            max-width: 140px;
+            height: auto;
+            filter: brightness(1.1) drop-shadow(0 0 20px rgba(255, 193, 7, 0.3));
+        }
+        
+        .header-title {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-subtitle {
+            color: #FFC107;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content-section {
+            padding: 50px 45px;
+        }
+        
+        .greeting {
+            color: #2c3e50;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .greeting strong {
+            color: #000;
+            font-weight: 700;
+        }
+        
+        .intro-paragraph {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .steps-section {
+            margin: 45px 0;
+        }
+        
+        .step-card {
+            background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+            border-left: 5px solid #FFC107;
+            padding: 28px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .step-number-badge {
+            background: linear-gradient(135deg, #FFC107 0%, #ffb300 100%);
+            color: #000;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 20px;
+            margin-right: 18px;
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.35);
+            flex-shrink: 0;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #000;
+            margin: 0;
+        }
+        
+        .step-description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-left: 62px;
+        }
+        
+        .code-highlight {
+            background: #FFC107;
+            color: #000;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: 900;
+            display: inline-block;
+            margin: 8px 0;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #FFC107 0%, #ffb300 100%);
+            border-radius: 14px;
+            padding: 28px;
+            margin: 40px 0;
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.25);
+        }
+        
+        .highlight-title {
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .highlight-content {
+            font-size: 15px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        
+        .highlight-content strong {
+            font-weight: 900;
+        }
+        
+        .closing-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        
+        .closing-text {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .signature-block {
+            margin-top: 30px;
+        }
+        
+        .sign-off {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .signature-name {
+            color: #000;
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 0;
+        }
+        
+        .footer-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            padding: 40px 45px;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            color: #FFC107;
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-id {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-address {
+            color: #aaa;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .footer-copyright {
+            color: #666;
+            font-size: 11px;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #FFC107 50%, transparent 100%);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="logo-wrapper">
+                <img src="LOGO.png" alt="NCET Buddy Logo">
+            </div>
+            <h1 class="header-title">Welcome!</h1>
+            <div class="header-subtitle">Partnership Activation</div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <p class="greeting">Dear <strong>[Client Name]</strong>,</p>
+            
+            <p class="intro-paragraph">
+                We're excited to welcome you to the <strong>NCET Buddy</strong> family! Thank you for choosing us as your partner. We're committed to delivering world-class proctored testing infrastructure that empowers your students to achieve their best.
+            </p>
+            
+            <p class="intro-paragraph">
+                Your personalized <strong>Service & Revenue Sharing Agreement</strong> is attached. Complete the three quick steps below to activate your partnership:
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- Steps -->
+            <div class="steps-section">
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number-badge">1</div>
+                        <h3 class="step-title">Unlock Access</h3>
+                    </div>
+                    <div class="step-description">
+                        The PDF is password-protected for security. Use your full name in capitals:
+                        <br><br><strong>Password Format:</strong> <div class="code-highlight">YOUR FULL NAME IN CAPS</div>
+                        <br><strong>Example:</strong> <div class="code-highlight">JOHN ANDERSON</div>
+                        <p style="color: #888; font-size: 13px; margin-top: 8px; margin-bottom: 0;">Note: Remove any spaces or special characters from your name. Use only letters.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number-badge">2</div>
+                        <h3 class="step-title">Sign & Scan</h3>
+                    </div>
+                    <div class="step-description">
+                        Print the document, sign it, and scan it back as a PDF. Make sure all signatures are clear and visible.
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number-badge">3</div>
+                        <h3 class="step-title">Submit & Launch</h3>
+                    </div>
+                    <div class="step-description">
+                        Reply to this email with your signed PDF.
+                        <br><strong>Email Subject:</strong> <div class="code-highlight">[Your Name]_Agreement</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Timeline Highlight -->
+            <div class="highlight-box">
+                <div class="highlight-title">⚡ Fast-Track Activation</div>
+                <div class="highlight-content">
+                    Once we receive your signed agreement, our team activates your account immediately. You'll be live and ready to create tests within <strong>7 business days</strong>.
+                </div>
+            </div>
+
+            <!-- Closing -->
+            <div class="closing-section">
+                <p class="closing-text">
+                    Have questions? Our dedicated support team is here to help you every step of the way. Reach out anytime—we're just an email away!
+                </p>
+
+                <div class="signature-block">
+                    <p class="sign-off">Looking forward to growing together,</p>
+                    <p class="signature-name">Team NCET Buddy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-section">
+            <div class="footer-brand">EXAM BUDDY</div>
+            <div class="footer-id">UDYAM-WB-10-0192985</div>
+            <div class="footer-address">
+                8/2, TMG Road, Kolkata<br>
+                West Bengal, 700041, India
+            </div>
+            <div class="footer-copyright">
+                © 2026 NCET Buddy. All rights reserved. | Empowering Education Through Technology
+            </div>
+        </div>
+    </div>
+</body>
+</html>

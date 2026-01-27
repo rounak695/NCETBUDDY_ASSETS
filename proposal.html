@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCET Buddy - Platform Demo Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .brand-yellow { background-color: #FFC107; }
+        .text-brand-yellow { color: #FFC107; }
+        .border-brand-yellow { border-color: #FFC107; }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .no-print { display: none !important; }
+            
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                background-color: white;
+            }
+            
+            html {
+                margin: 0;
+                padding: 0;
+            }
+            
+            section, header, div {
+                page-break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            .page-break {
+                page-break-before: always;
+                margin-top: 0;
+                padding-top: 20px;
+            }
+            
+            img {
+                max-width: 100%;
+                page-break-inside: avoid;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+            }
+            
+            .step-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        
+        .step-card {
+            border: 2px solid #000000;
+            box-shadow: 8px 8px 0px #FFC107;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased print:bg-white" style="margin: 0; padding: 0;">
+
+    <!-- Hero Section -->
+    <header class="bg-black text-white pt-20 pb-32 px-6 hero-clip relative" style="margin: 0; padding: 80px 24px 128px;">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block bg-[#FFC107] text-black px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-widest uppercase">
+                NCET BUDDY 2.0 IS LIVE
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tighter">
+                MASTER YOUR <br> <span class="text-[#FFC107] italic underline decoration-white">JOURNEY</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                The all-in-one platform for NCET aspirants. Access curated notes, mock tests, and expert mentorship to supercharge success.
+            </p>
+            <div class="flex justify-center gap-4 no-print">
+                <div class="w-32 h-1 bg-[#FFC107]"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section class="max-w-5xl mx-auto px-6 -mt-16 relative z-10" style="margin: -64px auto 0; padding: 0 24px;">
+        <div class="bg-white border-4 border-black p-8 md:p-12 shadow-[12px_12px_0px_#000000]" style="page-break-inside: avoid;">
+            <h2 class="text-3xl font-black mb-6 uppercase tracking-tight flex items-center gap-3">
+                <span class="w-2 h-8 bg-[#FFC107]"></span>
+                Executive Summary
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        NCET Buddy is a premier educational infrastructure provider designed specifically for individual educators and digital content creators. We provide a professional, distraction-free ecosystem that bridges the gap between YouTube instruction and high-stakes examination performance.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="bg-[#FFC107] p-1 mt-1 rounded">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <p class="font-bold">Institutional Professionalism</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="bg-[#FFC107] p-1 mt-1 rounded">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <p class="font-bold">Distraction-Free Learning</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="bg-[#FFC107] p-1 mt-1 rounded">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <p class="font-bold">NTA-Standard Interface</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="max-w-5xl mx-auto px-6 py-20" style="margin: 0 auto; padding: 80px 24px; page-break-before: always; page-break-inside: avoid;">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black mb-6 uppercase tracking-tight flex items-center justify-center gap-3">
+                <span class="w-2 h-8 bg-[#FFC107]"></span>
+                What We Offer
+                <span class="w-2 h-8 bg-[#FFC107]"></span>
+            </h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                Two powerful solutions designed to transform how educators teach and how students learn.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Offer 1: Proctored Mock Tests -->
+            <div class="border-4 border-black p-8 bg-white shadow-[8px_8px_0px_#FFC107] rounded-lg hover:shadow-[12px_12px_0px_#FFC107] transition-shadow">
+                <div class="mb-6">
+                    <div class="w-14 h-14 bg-[#FFC107] rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase mb-3">Real-Time Proctored Mock Tests</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    
+                    Give your students a premium, exam-ready experience without the technical headache. Just create your test and share it—we’ll handle the uploading, manage student traffic, and ensure total integrity. It’s a completely hassle-free solution for educators, letting you focus on results while we run the show on our intuitive platform.
+                </p>
+                <div class="flex items-start gap-3 text-sm font-bold text-[#FFC107]">
+                    <span>✓</span>
+                    <span>Elevate teaching effectiveness and student confidence</span>
+                </div>
+            </div>
+
+            <!-- Offer 2: Distraction-Free Video Classes -->
+            <div class="border-4 border-black p-8 bg-white shadow-[8px_8px_0px_#FFC107] rounded-lg hover:shadow-[12px_12px_0px_#FFC107] transition-shadow">
+                <div class="mb-6">
+                    <div class="w-14 h-14 bg-[#FFC107] rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase mb-3">Distraction-Free Learning Hub</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Free your students from the endless scroll and algorithmic distractions. Our curated video platform brings all your favorite content creators to one focused learning space. With seamless YouTube integration, your ad revenue continues flowing while your watch hours skyrocket—students stay engaged, and creators thrive.
+                </p>
+                <div class="flex items-start gap-3 text-sm font-bold text-[#FFC107]">
+                    <span>✓</span>
+                    <span>Maximize engagement, retention, and creator monetization</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 1 & 2 -->
+    <section class="max-w-5xl mx-auto px-6 py-20 space-y-20" style="margin: 0 auto; padding: 80px 24px; page-break-before: always;">
+        
+        <!-- Step 1 -->
+        <div class="space-y-8">
+            <div class="flex items-baseline gap-4">
+                <span class="text-6xl font-black text-gray-200">01</span>
+                <div>
+                    <h3 class="text-2xl font-black uppercase">The Landing & Login Experience</h3>
+                    <p class="text-gray-600">Premium, high-conversion design optimized for all devices.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="step-card bg-white p-2 rounded-lg">
+                    <img src="SCR-20260125-okuz.png" alt="Landing Page" class="w-full h-auto rounded border border-gray-100 shadow-sm" style="aspect-ratio: 9/16; object-fit: cover;" onerror="this.src='https://via.placeholder.com/450x800?text=Landing+Page+Image'">
+                </div>
+                <div class="step-card bg-white p-2 rounded-lg">
+                    <img src="landing.png" alt="Login Page" class="w-full h-auto rounded border border-gray-100 shadow-sm" style="aspect-ratio: 9/16; object-fit: cover;" onerror="this.src='https://via.placeholder.com/450x800?text=Login+Interface+Image'">
+                </div>
+            </div>
+            <p class="text-xs italic text-gray-500 mt-3 text-right">* Actual page alignment may vary</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="space-y-8" style="page-break-before: always;">
+            <div class="flex items-baseline gap-4">
+                <span class="text-6xl font-black text-gray-200">02</span>
+                <div>
+                    <h3 class="text-2xl font-black uppercase">Command Center (Dashboard)</h3>
+                    <p class="text-gray-600">Personalized hub for goals, live classes, and curated resources.</p>
+                </div>
+            </div>
+            <div class="step-card bg-white p-2 rounded-lg max-w-4xl mx-auto">
+                <img src="dashboard.png" alt="Dashboard" class="w-full h-auto rounded" onerror="this.src='https://via.placeholder.com/1200x600?text=Student+Dashboard+Image'">
+            </div>
+            <p class="text-xs italic text-gray-500 mt-3 text-right">* Actual page alignment may vary</p>
+        </div>
+
+        <!-- Step 3 & 4 -->
+        <div class="space-y-8" style="page-break-before: always;">
+            <div class="flex items-baseline gap-4">
+                <span class="text-6xl font-black text-gray-200">03</span>
+                <div>
+                    <h3 class="text-2xl font-black uppercase">Curated Mock Tests</h3>
+                    <p class="text-gray-600">Subject-wise categorization with precise time and item management.</p>
+                </div>
+            </div>
+            <div class="step-card bg-white p-2 rounded-lg max-w-4xl mx-auto">
+                <img src="SCR-20260125-oltm.png" alt="Mock Tests" class="w-full h-auto rounded" onerror="this.src='https://via.placeholder.com/1200x600?text=Mock+Test+Selection+Image'">
+            </div>
+            <p class="text-xs italic text-gray-500 mt-3 text-right">* Actual page alignment may vary</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="space-y-8" style="page-break-before: always;">
+            <div class="flex items-baseline gap-4">
+                <span class="text-6xl font-black text-gray-200">04</span>
+                <div>
+                    <h3 class="text-2xl font-black uppercase">The Proctored Experience</h3>
+                    <p class="text-gray-600">Authentic NTA environment with Strict-Mode proctoring protocols.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="step-card bg-white p-2 rounded-lg">
+                    <img src="mock1.png" alt="Instructions" class="w-full h-auto rounded" style="aspect-ratio: 16/9; object-fit: cover;" onerror="this.src='https://via.placeholder.com/800x450?text=Test+Instructions'">
+                </div>
+                <div class="step-card bg-white p-2 rounded-lg">
+                    <img src="mock2.png" alt="NTA Interface" class="w-full h-auto rounded" style="aspect-ratio: 16/9; object-fit: cover;" onerror="this.src='https://via.placeholder.com/800x450?text=NTA+Test+Interface'">
+                </div>
+            </div>
+            <p class="text-xs italic text-gray-500 mt-3 text-right">* Actual page alignment may vary</p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="space-y-8" style="page-break-before: always;">
+            <div class="flex items-baseline gap-4">
+                <span class="text-6xl font-black text-gray-200">05</span>
+                <div>
+                    <h3 class="text-2xl font-black uppercase">Review & Deep Analytics</h3>
+                    <p class="text-gray-600">Data-driven feedback identifying topic strengths and focus areas.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="step-card bg-white p-2 rounded-lg">
+                    <img src="SCR-20260125-omju-2.png" alt="Review" class="w-full h-auto rounded" style="aspect-ratio: 16/9; object-fit: cover; object-position: top;" onerror="this.src='https://via.placeholder.com/800x450?text=Detailed+Review+Screen'">
+                </div>
+                <div class="step-card bg-white p-2 rounded-lg">
+                    <img src="SCR-20260125-omyz.png" alt="Analytics" class="w-full h-auto rounded" style="aspect-ratio: 16/9; object-fit: cover;" onerror="this.src='https://via.placeholder.com/800x450?text=Analytics+Dashboard'">
+                </div>
+            </div>
+            <p class="text-xs italic text-gray-500 mt-3 text-right">* Actual page alignment may vary</p>
+        </div>
+
+        <!-- Founders Section -->
+        <div class="space-y-12" style="page-break-before: always; margin-top: 80px; padding-top: 20px; border-top: 4px solid #000000;">
+            <div>
+            <h3 class="text-2xl font-black uppercase">Meet Our Founders</h3>
+            </div>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-left leading-relaxed mb-12">
+            We are deeply committed to delivering exceptional service and innovative solutions to our clients. Our team brings together diverse expertise and a shared vision to transform educational technology and empower educators.
+            </p>
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <!-- Founder 1: Ravi Gupta -->
+            <div class="step-card bg-white p-8 rounded-lg flex flex-col items-center text-center space-y-6">
+            <div class="w-48 h-48 bg-gray-200 border-4 border-black rounded-full shadow-lg flex items-center justify-center overflow-hidden">
+            <img src="ravi.jpg" alt="Ravi Gupta" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/192x192?text=Ravi+Gupta'">
+            </div>
+            <div>
+            <h3 class="text-2xl font-black uppercase">Ravi Gupta</h3>
+            <p class="text-lg font-bold text-[#FFC107] mt-2">Co-Founder, Head of Operations</p>
+            </div>
+            </div>
+            
+            <!-- Founder 2: Rounak -->
+            <div class="step-card bg-white p-8 rounded-lg flex flex-col items-center text-center space-y-6">
+            <div class="w-48 h-48 bg-gray-200 border-4 border-black rounded-full shadow-lg flex items-center justify-center overflow-hidden">
+            <img src="rounak.jpeg" alt="Rounak" class="w-full h-full object-cover object-top" onerror="this.src='https://via.placeholder.com/192x192?text=Rounak'">
+            </div>
+            <div>
+            <h3 class="text-2xl font-black uppercase">Rounak Paul</h3>
+            <p class="text-lg font-bold text-[#FFC107] mt-2">Co-Founder, Tech Lead</p>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Final Call to Action -->
+        <div class="bg-black text-white p-12 text-center rounded-3xl border-b-8 border-[#FFC107] page-break">
+            <h2 class="text-4xl font-black mb-6 italic underline decoration-[#FFC107]">READY TO ELEVATE YOUR TEACHING?</h2>
+            <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto">
+                Join the growing network of educators who trust NCET Buddy to deliver the best results for their students.
+            </p>
+            <div class="inline-block bg-[#FFC107] text-black px-10 py-4 font-black rounded-lg text-lg uppercase shadow-lg">
+                Partner With Us Now
+            </div>
+            <p class="mt-8 text-sm text-gray-500 font-bold tracking-widest uppercase">
+                &copy; 2026 NCET BUDDY. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+
+    </section>
+
+    
+
+</body>
+</html>
